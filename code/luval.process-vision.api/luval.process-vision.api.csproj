@@ -57,8 +57,12 @@
     <Compile Include="Model\PredictionBoundingBox.cs" />
     <Compile Include="Model\PredictionResponse.cs" />
     <Compile Include="Model\PredictionResult.cs" />
+    <Compile Include="Model\VisionObject.cs" />
+    <Compile Include="Model\VisionResult.cs" />
+    <Compile Include="OcrService.cs" />
     <Compile Include="PredictionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisionAnalyzer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

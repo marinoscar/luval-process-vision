@@ -10,11 +10,11 @@ namespace luval.process_vision.api.Model
     public class OcrResponse
     {
         [JsonProperty(PropertyName = "language")]
-        public string language { get; set; }
+        public string Language { get; set; }
         [JsonProperty(PropertyName = "textAngle")]
-        public decimal textAngle { get; set; }
+        public decimal TextAngle { get; set; }
         [JsonProperty(PropertyName = "orientation")]
-        public string orientation { get; set; }
+        public string Orientation { get; set; }
         [JsonProperty(PropertyName = "regions")]
         public List<OcrRegion> Regions { get; set; }
     }

@@ -10,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace luval.process_vision.api
 {
-    public class PredictionService
+    public class OcrService
     {
-        public IRestResponse<PredictionResponse> Predict(string imageFileName)
+        public IRestResponse<OcrResponse> DoOcr(string imageFileName)
         {
             var file = new FileInfo(imageFileName);
-            return Predict(file, File.ReadAllBytes(file.FullName));
+            return DoOcr(file, File.ReadAllBytes(file.FullName));
         }
 
-        public IRestResponse<PredictionResponse> Predict(FileInfo file, byte[] body)
+        public IRestResponse<OcrResponse> DoOcr(FileInfo file, byte[] body)
         {
-            var serviceUrl = ConfigurationManager.AppSettings["api.custom-vision.prediction.url.file"];
-            var serviceKey = ConfigurationManager.AppSettings["api.custom-vision.key"];
+            var serviceUrl = ConfigurationManager.AppSettings["api.computer-vision.ocr.url"];
+            var serviceKey = ConfigurationManager.AppSettings["api.computer-vision.key"];
             var client = new RestClient(serviceUrl);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/octet-stream");
-            request.AddHeader("Prediction-Key", serviceKey);
+            request.AddHeader("Ocp-Apim-Subscription-Key", serviceKey);
             request.AddParameter("content", body, ParameterType.RequestBody);
-            var response = client.Execute<PredictionResponse>(request);
+            var response = client.Execute<OcrResponse>(request);
             return response;
         }
     }

@@ -12,8 +12,16 @@ namespace luval.process_vision.tester
     {
         static void Main(string[] args)
         {
-            var service = new PredictionService();
-            var response = service.Predict(@"C:\Users\ch489gt\Pictures\Snag-Auto\SNAG-0019.png");
+            var imgFile = @"C:\Users\ch489gt\Pictures\Snag-Auto\TestSnag.png";
+
+            var predictService = new PredictionService();
+            var predictRes = predictService.Predict(imgFile);
+
+            var ocrService = new OcrService();
+            var ocrRes = ocrService.DoOcr(imgFile);
+
+            var analyzer = new VisionAnalyzer();
+            var result = analyzer.GetResult(imgFile, predictRes.Data);
         }
     }
 }
