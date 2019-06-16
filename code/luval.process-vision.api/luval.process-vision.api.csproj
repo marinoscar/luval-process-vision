@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\OcrBoundingBox.cs" />
+    <Compile Include="Model\OcrLine.cs" />
+    <Compile Include="Model\OcrRegion.cs" />
+    <Compile Include="Model\OcrResponse.cs" />
+    <Compile Include="Model\OcrWord.cs" />
     <Compile Include="Model\PredictionBoundingBox.cs" />
     <Compile Include="Model\PredictionResponse.cs" />
     <Compile Include="Model\PredictionResult.cs" />
